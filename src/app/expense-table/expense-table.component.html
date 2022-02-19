@@ -1,0 +1,13 @@
+<div class="grid grid-cols-4 gap-4">
+    <app-income 
+        class="col-start-2"
+        [incomes]="getIncomeCatalogue()"
+        (expensesRemoved)="removeExpense($event)"
+        (expensesUpdated)="updateExpense($event)"
+    ></app-income>
+    <app-expenses
+        [expenses]="getExpenseCatalogue()"
+        (expensesRemoved)="removeExpense($event)"
+        (expensesUpdated)="updateExpense($event)"
+    ></app-expenses>
+</div>

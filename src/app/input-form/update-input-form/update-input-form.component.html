@@ -1,0 +1,20 @@
+<div class="grid grid-cols-4 gap-4 my-4">
+    <input 
+        type="text" 
+        class="input-field"
+        [(ngModel)]="updatedAmount"
+        placeholder={{expenseToUpdate.expenseAmount}}
+    >
+    <input 
+        type="text" 
+        class="input-field col-span-2"
+        [(ngModel)]="updatedDescription"
+        placeholder={{expenseToUpdate.expenseDescription}}
+    >
+    <button 
+        class="btn-edit"
+        (click)="updateExpense()"
+    >
+        Update
+    </button>
+</div>

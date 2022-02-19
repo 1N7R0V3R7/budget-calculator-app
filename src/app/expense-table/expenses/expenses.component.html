@@ -1,0 +1,22 @@
+<div class="bg-red-100 rounded-md text-white text-center p-4">
+    <h1 class="bg-red-600 font-bold p-2 rounded-t-md text-2xl">Expenses</h1>
+    <div class="grid grid-cols-4 bg-red-600 p-2">
+        <p class="font-bold">
+            Amount
+        </p>
+        <p class="text-center font-bold col-span-3">
+            Description
+        </p>
+    </div>
+    <div class="text-red-700 my-4" *ngIf="expenses.length===0; else localTag">
+        No Expense Yet!
+    </div>
+    <ng-template #localTag>
+        <app-expense-item
+            *ngFor="let expense of expenses"
+            [item]="expense"
+            (expensesRemoved)="removeExpense($event)"
+            (expensesUpdated)="updateExpense($event)"
+        ></app-expense-item>
+    </ng-template>
+</div>

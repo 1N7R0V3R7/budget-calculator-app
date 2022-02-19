@@ -1,0 +1,24 @@
+<div 
+    *ngIf="!updateFlag; else updateForm"
+    class="grid grid-cols-4 py-2 gap-1"
+    [ngStyle]="{'color': getColor()}"
+>
+    <p class="font-bold my-auto">
+        Rs. {{ item.expenseAmount }}
+    </p>
+    <p class="text-center col-span-2 my-auto">
+        {{ item.expenseDescription }}
+    </p>
+    <div class="grid grid-rows-2 gap-1">
+        <button class="btn-edit" (click)="this.updateFlag = !this.updateFlag">
+            Edit
+        </button>
+        <button class="btn-remove" (click)="removeExpense($event)">Remove</button>
+    </div>
+</div>
+<<ng-template #updateForm>
+    <app-update-input-form
+        [expenseToUpdate]="item"
+        (expensesUpdated)="updateExpense($event)"
+    ></app-update-input-form>
+</ng-template>

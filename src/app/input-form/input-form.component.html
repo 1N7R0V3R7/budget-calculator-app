@@ -1,0 +1,20 @@
+<div class="mt-8 p-8 grid grid-cols-5 gap-4">
+    <input 
+        type="number" 
+        class="input-field col-start-2"
+        [(ngModel)]="expenseAmount"
+        placeholder="Enter Amount"
+    >
+    <input 
+        type="text" 
+        class="input-field"
+        [(ngModel)]="expenseDescription"
+        placeholder="Enter Name"
+    >
+    <button 
+        class="btn-add"
+        (click)="addExpense()"
+    >
+        Add
+    </button>
+</div>

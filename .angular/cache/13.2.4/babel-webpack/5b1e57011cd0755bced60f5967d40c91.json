@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class ExpenseCatalogue {\n  constructor(type, expenseAmount, expenseDescription) {\n    this.type = type;\n    this.expenseAmount = expenseAmount;\n    this.expenseDescription = expenseDescription;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

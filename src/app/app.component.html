@@ -1,0 +1,12 @@
+<app-header></app-header>
+<app-input-form
+  (expensesAdded)="addToExpensesList($event)"
+></app-input-form>
+<app-expense-table 
+  [updatedExpenseCatalogue]="expenseCatalogue"
+  (expensesRemoved)="removeExpense($event)"
+  (expensesUpdated)="updateExpense($event)"
+></app-expense-table>
+<div class="grid grid-cols-5 my-8">
+  <button class="btn-remove col-start-3 text-base px-4 py-2" (click)="clearExpense()">Clear All</button>
+</div>
